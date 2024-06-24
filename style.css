@@ -1,19 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 *{  
-    --color: rgb(250, 215, 246);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'PlayFair Display', sans-serif;
 }
 
+:root{
+    --primary-color: rgb(250, 215, 246);
+    --secondary-color: black;
+    --tertiary-color: white;
+}
+
 body{
-    background-color: var(--color);
+    background-color: var(--primary-color);
+}
+
+body.dark{
+    --primary-color: black;
+    --secondary-color: white;
+    --tertiary-color: rgba(42, 119, 227, 0.821);
 }
 
 .quote-box{
-    background: rgb(255, 255, 255);
+    background: var(--tertiary-color);
     width: 700px;
     position: absolute;
     top: 50%;
@@ -37,7 +48,7 @@ body{
     height: 3px;
     border-radius: 3px;
     position: absolute;
-    background-color: var(--color);
+    background-color: var(--primary-color);
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -64,7 +75,7 @@ body{
     content: '';
     width: 20px;
     height: 2px;
-    background: var(--color);
+    background: var(--primary-color);
     position: absolute;
     top: 50%;
     left: -30px;
@@ -78,10 +89,10 @@ body{
 }
 
 .quote-box button{
-    background: var(--color);
-    color: black;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 25px;
-    border: 1px solid var(--color);
+    border: 1px solid var(--primary-color);
     width: 150px;
     height: 50px;
     display: flex;
@@ -98,4 +109,15 @@ body{
 
 .quote-box button:nth-child(2){
     background: transparent;
+}
+
+#theme {
+    padding: 40px;
+    position: fixed;
+    right: 0px;
+}
+
+#icon{
+    width: 50px;
+    cursor: pointer;
 }
